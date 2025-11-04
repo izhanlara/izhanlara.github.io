@@ -1,0 +1,60 @@
+---
+import BaseLayout from "../../layouts/baseAstro.astro";
+import NavBar from "../../components/navBar.astro";
+import About from "./about.astro";
+import Projects from "../projects.astro";
+import Contact from "../contact.astro";
+import projects from "../../data/projects.json";
+
+import "../../styles/home.css"
+
+
+import avatar from "../../assets/media/izhanlara.png";
+import html from "../../assets/icons/html5.png";
+import css from "../../assets/icons/css3.png";
+import js from "../../assets/icons/js.png";
+import react from "../../assets/icons/react.png";
+import python from "../../assets/icons/python.png";
+import git from "../../assets/icons/git.png";
+---
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<BaseLayout title="Inicio | Izhan Lara" id="home">
+  <NavBar />
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="intro">Hola, soy <span class="highlight">Izhan</span>  👋</p>
+      <h1>
+        <span class="highlight">Desarrollador</span> Web
+        <span class="typing">|</span>
+      </h1>
+      <p class="desc">Transformo ideas en experiencias digitales únicas.</p>
+      <a href="/cv.pdf" class="btn">Descargar CV</a>
+
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/izhan-lara-garc%C3%ADa/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/izhanlara" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar">
+        <img src={avatar.src} alt="Imagen de Izhan Lara" />
+      </div>
+      <div class="tech-icons">
+        <img src={html.src} alt="HTML" />
+        <img src={css.src} alt="CSS" />
+        <img src={js.src} alt="JavaScript" />
+        <img src={react.src} alt="React" />
+        <img src={python.src} alt="Python" />
+        <img src={git.src} alt="Git" />
+      </div>
+    </div>
+  </section>
+
+  <About />
+  <Projects projects={projects.slice(0, 3)} />
+  <Contact />
+</BaseLayout>

@@ -1,0 +1,24 @@
+---
+import "../styles/components.css";
+import Languaje from "./languaje.astro";
+import { getTranslations } from "../scripts/i18n.js";
+
+const langFromHeader = Astro.request.headers.get("accept-language")?.split(",")[0].slice(0, 2);
+const currentLang = Astro.cookies.get("lang")?.value || langFromHeader || "en";
+
+const t = await getTranslations(currentLang);
+
+import logo from "../assets/media/logo.png";
+---
+
+<nav class="navbar">
+  <a href="" class="logo">Izhan<span>Lara</span></a>
+  <div class="links">
+    <a href="#about">{t.nav.navAbout}</a>
+    <a href="#projects">{t.nav.navProjects}</a>
+    <a href="#contact">{t.nav.navContact}</a>
+    <Languaje currentLang={currentLang} />
+  </div>
+</nav>
+
+<script type="module" src="/src/scripts/navbar.ts"></script>

@@ -1,11 +1,80 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+import BaseLayout from "../layouts/baseAstro.astro";
+import NavBar from "../components/navBar.astro";
+import About from "./about.astro";
+import Projects from "./projects.astro";
+import Contact from "./contact.astro";
+import projects from "../data/projects.json";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import "../styles/home.css";
+
+
+import avatar from "../assets/media/izhanlara.png";
+import html from "../assets/icons/html5.png";
+import css from "../assets/icons/css3.png";
+import js from "../assets/icons/js.png";
+import react from "../assets/icons/react.png";
+import python from "../assets/icons/python.png";
+import angular from "../assets/icons/angular.png";
+import git from "../assets/icons/git.png";
+import linux from "../assets/icons/linux.png";
+import node from "../assets/icons/node.png";
+import github from "../assets/icons/github.png";
+import wordpress from "../assets/icons/wordpress.png";
+import figma from "../assets/icons/figma.png";
+import ts from "../assets/icons/ts.png";
+
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
+
+<BaseLayout title="Home | Izhan Lara" id="home">
+  <NavBar />
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="intro">
+        Hi, I'm <span class="highlight">Izhan</span> 👋
+      </p>
+      <h1>
+        <span class="highlight">Web</span> Developer
+        <span class="typing">|</span>
+      </h1>
+      <p class="desc">I turn ideas into unique digital experiences.</p>
+      <a href="/cv.pdf" class="btn">Download CV</a>
+
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/izhan-lara-garc%C3%ADa/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/izhanlara" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="avatar">
+        <img src={avatar.src} alt="Imagen de Izhan Lara" />
+      </div>
+      <div class="tech-icons">
+        <img src={html.src} alt="HTML" />
+        <img src={css.src} alt="CSS" />
+        <img src={js.src} alt="JavaScript" />
+        <img src={react.src} alt="React" />
+        <img src={python.src} alt="Python" />
+        <img src={angular.src} alt="Angular" />
+        <img src={linux.src} alt="Linux" />
+        <img src={node.src} alt="Node" />
+        <img src={git.src} alt="Git" />
+        <img src={github.src} alt="Github" />
+        <img src={wordpress.src} alt="Wordpress" />
+        <img src={figma.src} alt="Figma" />
+        <img src={ts.src} alt="TS" />
+
+      </div>
+    </div>
+  </section>
+
+  <About />
+  <Projects projects={projects.slice(0, 3)} />
+  <Contact />
+</BaseLayout>

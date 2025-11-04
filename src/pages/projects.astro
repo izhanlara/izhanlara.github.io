@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/baseAstro.astro";
+import projects from "../data/projects.json";
+import ProjectCard from "../components/projectCard.astro";
+---
+
+<BaseLayout title="Proyectos | Izhan Lara">
+  <section class="projects" id="projects">
+    <div class="container">
+      <h1>Proyectos</h1>
+      <div class="project-grid">
+        {projects.map((p) => <ProjectCard {...p} />)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

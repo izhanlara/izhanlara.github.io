@@ -1,0 +1,27 @@
+[
+    {
+    "title": "NAW - News Around the World",
+    "description" : "A modern, high-performance web application to stay up-to-date with the latest global news, built with Angular 20 and Server-Side Rendering (SSR). It provides a smooth user experience with support for multiple languages and dark mode.",
+    "image": "/images/projects/naw.webp",
+    "link": "#",
+    "githubUrl": "https://github.com/NAW-News-Around-the-World/NAW",
+    "status": "In progress",
+    "techStack": "Angular"
+  },
+   {
+    "title": "Icon Bot",
+    "description": "",
+    "image": "/images/projects/iconbot.webp",
+    "link": "https://discord.com/oauth2/authorize?client_id=773838863050211338",
+    "status": "Closed",
+    "techStack": "Discord.js"
+  },
+  {
+    "title": "ISB Instalaciones",
+    "description": "",
+    "image": "/images/projects/ibs.webp",
+    "link": "#",
+    "status": "In progress",
+    "techStack": "Wordpress"
+  } 
+]

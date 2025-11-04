@@ -1,0 +1,84 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* === NAVBAR === */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem;
+  background: rgba(14, 14, 14, 0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  transition: var(--transition);
+}
+
+.navbar img{
+  float: inline-start;
+  width: 50px;
+}
+
+
+.navbar:hover {
+  background: rgba(14, 14, 14, 0.95);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.logo span {
+  color: var(--accent);
+  transition: var(--transition);
+}
+
+.logo:hover span {
+  filter: brightness(1.2);
+}
+
+
+/* === BOTÓN DE SELECCIÓN DE IDIOMA === */
+.btnSelectLang {
+  background: transparent;
+  color: #ffda00;
+  border: 2px solid #ffda00;
+  padding: 0.6rem 1.2rem;
+  margin-left: 30px;
+  width: 165px;
+  border-radius: 40px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 218, 0, 0.25);
+  backdrop-filter: blur(4px);
+  text-transform: uppercase;
+}
+
+/* Hover brillante */
+.btnSelectLang:hover {
+  background: #ffda00;
+  color: #000;
+  transform: scale(1.07);
+  box-shadow: 0 0 30px rgba(255, 218, 0, 0.7);
+}
+
+/* Estado activo (clic) */
+.btnSelectLang:active {
+  transform: scale(0.98);
+  box-shadow: 0 0 15px rgba(255, 218, 0, 0.4);
+}
+
+/* Para modo oscuro o fondos oscuros */
+.btnSelectLang:focus {
+  outline: none;
+  box-shadow: 0 0 25px rgba(255, 218, 0, 0.6);
+}
