@@ -1,11 +1,11 @@
 ---
-const { title, description, image, link, githubUrl, demo, techStack, status } = Astro.props;
+const { title, description, image, link, demo, techStack, status } = Astro.props;
+
 ---
-<a href={link} class="project-card">
-  <img src={image} alt={title} loading="lazy" />
+<a href={link} class="project-card" target="_blank">
+  <img src={`/src/assets/media/projects/${image}.png`} alt={title} loading="lazy" />
   <h3>{title}</h3>
   <p>{description}</p>
   <p>Tech Stack: {techStack}</p>
   <p>Status: {status}
-    <p><a href="https://github.com/NAW-News-Around-the-World/NAW">Github URL</a></p>
 </a>

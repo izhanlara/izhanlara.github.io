@@ -1,33 +1,17 @@
 ---
-const { currentLang } = Astro.props;
 import { getRelativeLocaleUrl } from "astro:i18n";
 import { getTranslations } from "../scripts/i18n.js";
 
+const { currentLang } = Astro.props;
 const t = await getTranslations(currentLang);
 
-
-const enUrl = getRelativeLocaleUrl("en", "")
-const esUrl = getRelativeLocaleUrl("es", "")
-const deUrl = getRelativeLocaleUrl("de", "")
-const zhUrl = getRelativeLocaleUrl("zh", "")
-const hiUrl = getRelativeLocaleUrl("hi", "")
-const arUrl = getRelativeLocaleUrl("ar", "")
-const frUrl = getRelativeLocaleUrl("fr", "")
-const bnUrl = getRelativeLocaleUrl("bn", "")
-const ptUrl = getRelativeLocaleUrl("pt", "")
-const ruUrl = getRelativeLocaleUrl("ru", "")
-
+const enUrl = getRelativeLocaleUrl("en", "");
+const esUrl = getRelativeLocaleUrl("es", "");
+const deUrl = getRelativeLocaleUrl("de", "");
 ---
 
-<select onchange="location = this.value;" class="btnSelectLang">
+<select onchange="window.location.href = this.value;" class="btnSelectLang">
   <option value={enUrl}>English</option>
   <option value={esUrl}>Español</option>
   <option value={deUrl}>Deutsch</option>
-  <option value={zhUrl}>中文 (Chino mandarín)</option>
-  <option value={hiUrl}>हिन्दी (Hindi)</option>
-  <option value={arUrl}>العربية (Árabe)</option>
-  <option value={frUrl}>Français (Francés)</option>
-  <option value={bnUrl}>বাংলা (Bengalí)</option>
-  <option value={ptUrl}>Português (Portugués)</option>
-  <option value={ruUrl}>Русский (Ruso)</option>
 </select>

@@ -1,0 +1,13 @@
+---
+import BaseLayout from "../layouts/baseAstro.astro";
+import BlogCard from "../components/blogCard.astro";
+import blog from "../data/blog.json";
+import NavBar from "../components/navBar.astro";
+
+---
+<BaseLayout>
+<section>
+    <NavBar />
+    {blog.map((b) => <BlogCard {...b} />)}
+</section>
+</BaseLayout>

@@ -1,0 +1,163 @@
+/* === TIMELINE SECTION === */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 6rem auto;
+  position: relative;
+  animation: fadeInUp 1s ease;
+}
+
+/* === EVENTO === */
+.timeline__event {
+  background: var(--card-bg);
+  color: var(--text);
+  margin: 2rem 0;
+  display: flex;
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(255, 215, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline__event:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(255, 215, 0, 0.25);
+}
+
+/* === ICONO === */
+.timeline__event__icon {
+  background: var(--accent);
+  flex-basis: 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+  font-size: 2.5rem;
+  position: relative;
+  padding: 2rem;
+}
+
+.timeline__event__icon i {
+  position: absolute;
+  top: 50%;
+  left: -3.2rem;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: var(--accent);
+}
+
+/* === CONTENIDO === */
+.timeline__event__content {
+  flex-basis: 75%;
+  padding: 2rem;
+}
+
+.timeline__event__title {
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  letter-spacing: 1px;
+}
+
+.timeline__event__date {
+  color: var(--muted);
+  font-weight: 600;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.timeline__event__description {
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* === CONECTOR DE LÍNEA === */
+.timeline__event::after {
+  content: "";
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: var(--accent);
+  left: -2.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.timeline__event::before {
+  content: "";
+  width: 1.5rem;
+  height: 1.5rem;
+  background: var(--bg);
+  border: 3px solid var(--accent);
+  border-radius: 50%;
+  position: absolute;
+  left: -3rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* === VARIANTES === */
+.timeline__event--type2::before {
+  border-color: #1e90ff;
+}
+.timeline__event--type2::after {
+  background: #1e90ff;
+}
+.timeline__event--type2 .timeline__event__title {
+  color: #1e90ff;
+}
+.timeline__event--type2 .timeline__event__icon {
+  background: #1e90ff;
+  color: #000;
+}
+
+.timeline__event--type3::before {
+  border-color: #24b47e;
+}
+.timeline__event--type3::after {
+  background: #24b47e;
+}
+.timeline__event--type3 .timeline__event__title {
+  color: #24b47e;
+}
+.timeline__event--type3 .timeline__event__icon {
+  background: #24b47e;
+  color: #000;
+}
+
+/* === ÚLTIMO EVENTO SIN CONECTOR === */
+.timeline__event:last-child::after {
+  content: none;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .timeline {
+    width: 90%;
+  }
+
+  .timeline__event {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .timeline__event__icon {
+    border-radius: 12px 12px 0 0;
+    padding: 1.5rem;
+  }
+
+  .timeline__event__icon i {
+    display: none;
+  }
+
+  .timeline__event::before,
+  .timeline__event::after {
+    display: none;
+  }
+}

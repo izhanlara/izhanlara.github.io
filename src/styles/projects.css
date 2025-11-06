@@ -1,0 +1,153 @@
+.projects {
+  background: var(--bg);
+  color: var(--text);
+  padding: 6rem 2rem;
+  text-align: center;
+  animation: fadeInUp 1s ease;
+  height: auto !important; /* <- IMPORTANTE: permite que la sección crezca según su contenido */
+  min-height: 40vh; /* opcional: para mantener sensación de pantalla completa en pantallas pequeñas */
+  box-sizing: border-box;
+} /* Título */
+.projects h1 {
+  font-size: 2.8rem;
+  color: var(--accent);
+  margin-bottom: 3rem;
+  position: relative;
+}
+.projects h1::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: var(--accent);
+  margin: 1rem auto 0;
+  border-radius: 10px;
+} /* GRID de tarjetas: alineamos por la parte superior para evitar cards desiguales */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  align-items: start; /* <- hace que todas las tarjetas arranquen desde arriba */
+  justify-items: center;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 0.5rem;
+} /* CARD: aseguramos que el <a> se comporte como bloque y que el interior use flex column */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 420px;
+  text-decoration: none;
+  color: var(--text);
+  background: var(--card-bg);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.6), 0 0 20px rgba(255, 215, 0, 0.06);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-sizing: border-box;
+  position: relative; /* para que sombras y contenido no se salgan */
+} /* Si usas <a class="project-card">, esto hace que sea bloque completo */
+.project-card {
+  display: block;
+} /* Hover */
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.65), 0 0 40px rgba(255, 215, 0, 0.16);
+} /* Imagen */
+.project-card img {
+  display: block;
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.06);
+}
+.project-card:hover img {
+  transform: scale(1.06);
+} /* Contenido: usamos padding y flex para empujar botones abajo */
+.project-card h3 {
+  margin: 1.1rem 1.4rem 0.6rem;
+  color: var(--accent);
+  font-size: 1.35rem;
+  line-height: 1.1;
+}
+.project-card p {
+  margin: 0.4rem 1.4rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+} /* Contenedor interno para empujar los links abajo */
+.project-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding-bottom: 1.2rem;
+  min-height: 140px;
+} /* Botones / links dentro de la tarjeta */
+.project-links {
+  margin: 1rem 1.4rem 1.4rem;
+  display: flex;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-start;
+} /* estilo principal botón */
+.project-links a {
+  background: var(--accent);
+  color: #000;
+  text-decoration: none;
+  padding: 0.5rem 0.95rem;
+  border-radius: 28px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+} /* outline button */
+.project-links a.outline {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(255, 215, 0, 0.14);
+} /* hover */
+.project-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(255, 215, 0, 0.12);
+} /* Si dentro de la tarjeta tienes links de texto (ej: GitHub en un <p>), forzamos que queden dentro */
+.project-card p a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+} /* Animación entrada (opcional en cascada más abajo) */
+@keyframes fadeInProject {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.project-card {
+  animation: fadeInProject 0.5s ease both;
+} /* RESPONSIVE */
+@media (max-width: 900px) {
+  .projects {
+    padding: 4rem 1.2rem;
+  }
+  .project-card img {
+    height: 200px;
+  }
+}
+@media (max-width: 600px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    gap: 1.2rem;
+  }
+  .project-card img {
+    height: 170px;
+  }
+  .project-links {
+    justify-content: flex-start;
+  }
+}

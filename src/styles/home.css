@@ -18,14 +18,14 @@
 
 .hero-content .intro {
   font-size: 1.2rem;
-  color: #ffda00;
+  /* color: #ffda00; */
   margin-bottom: 0.5rem;
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
   font-weight: 700;
-  line-height: 1.2;
+  /* line-height: 1.2; */
 }
 
 .hero-content .highlight {

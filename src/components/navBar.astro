@@ -8,7 +8,6 @@ const currentLang = Astro.cookies.get("lang")?.value || langFromHeader || "en";
 
 const t = await getTranslations(currentLang);
 
-import logo from "../assets/media/logo.png";
 ---
 
 <nav class="navbar">
@@ -21,4 +20,6 @@ import logo from "../assets/media/logo.png";
   </div>
 </nav>
 
-<script type="module" src="/src/scripts/navbar.ts"></script>
+<script type="module" src="/src/scripts/navbar.ts">
+  
+</script>

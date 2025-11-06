@@ -1,21 +1,8 @@
-// import {defineMiddleware, sequence} from "astro:middleware";
-// import { middleware } from "astro:i18n"; // Astro's own i18n routing config
+export function onRequest (context, next) {
+    // intercept data from a request
+    // optionally, modify the properties in `locals`
+    context.locals.title = "New title";
 
-// export const userMiddleware = defineMiddleware(async (ctx, next) => {
-//   const response = await next();
-//   if (ctx.url.startsWith("/es")) {
-//     return new Response("", {
-//       status: 200
-//     });
-//   } else {
-//     return response;
-//   }
-// });
-
-// export const onRequest = sequence(
-//   userMiddleware,
-//   middleware({
-//     redirectToDefaultLocale: false,
-//     prefixDefaultLocale: true
-//   })
-// )
+    // return a Response or the result of calling `next()`
+    return next();
+};
