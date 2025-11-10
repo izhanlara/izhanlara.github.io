@@ -5,13 +5,11 @@ import { getTranslations } from "../scripts/i18n.js";
 const { currentLang } = Astro.props;
 const t = await getTranslations(currentLang);
 
-const enUrl = getRelativeLocaleUrl("en", "");
+const enUrl = getRelativeLocaleUrl("en", "en");
 const esUrl = getRelativeLocaleUrl("es", "");
-const deUrl = getRelativeLocaleUrl("de", "");
 ---
 
 <select onchange="window.location.href = this.value;" class="btnSelectLang">
   <option value={enUrl}>English</option>
   <option value={esUrl}>Español</option>
-  <option value={deUrl}>Deutsch</option>
 </select>

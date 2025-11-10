@@ -1,31 +1,28 @@
 ---
-import BaseLayout from "../layouts/baseAstro.astro";
-import NavBar from "../components/navBar.astro";
+import BaseLayout from "../../layouts/baseAstro.astro";
+import NavBar from "../../components/navBar.astro";
 import About from "./about.astro";
 import Projects from "./projects.astro";
 import Contact from "./contact.astro";
-import projects from "../data/projects.json";
+import projects from "../../data/projects.json";
 
-import "../styles/home.css";
+import "../../styles/home.css";
 
 
-import avatar from "../assets/media/izhanlara.png";
-import html from "../assets/icons/html5.png";
-import css from "../assets/icons/css3.png";
-import js from "../assets/icons/js.png";
-import react from "../assets/icons/react.png";
-import python from "../assets/icons/python.png";
-import angular from "../assets/icons/angular.png";
-import git from "../assets/icons/git.png";
-import linux from "../assets/icons/linux.png";
-import node from "../assets/icons/node.png";
-import github from "../assets/icons/github.png";
-import wordpress from "../assets/icons/wordpress.png";
-import figma from "../assets/icons/figma.png";
-import ts from "../assets/icons/ts.png";
-
-import cv from "./izhanlaragarcia.pdf";
-
+import avatar from "../../assets/media/izhanlara.png";
+import html from "../../assets/icons/html5.png";
+import css from "../../assets/icons/css3.png";
+import js from "../../assets/icons/js.png";
+import react from "../../assets/icons/react.png";
+import python from "../../assets/icons/python.png";
+import angular from "../../assets/icons/angular.png";
+import git from "../../assets/icons/git.png";
+import linux from "../../assets/icons/linux.png";
+import node from "../../assets/icons/node.png";
+import github from "../../assets/icons/github.png";
+import wordpress from "../../assets/icons/wordpress.png";
+import figma from "../../assets/icons/figma.png";
+import ts from "../../assets/icons/ts.png";
 
 const lang = Astro.request.headers.get("accept-language")?.split(",")[0].slice(0, 2) || "en";
 const targetLang = ["en", "es"].includes(lang) ? lang : "en";
@@ -47,7 +44,7 @@ Astro.redirect(`/${targetLang}/`);
         <span class="typing">|</span>
       </h1>
       <p class="desc">I turn ideas into unique digital experiences.</p>
-      <a href={cv} class="btn" download="CVIzhanLaraGarcia.pdf">Download CV</a>
+      <a href="/cv.pdf" class="btn">Download CV</a>
 
       <div class="socials">
         <a href="https://www.linkedin.com/in/izhan-lara-garc%C3%ADa/" target="_blank"><i class="fab fa-linkedin"></i></a>

@@ -1,9 +1,9 @@
 ---
 import BaseLayout from "../../layouts/baseAstro.astro";
-import NavBar from "../../components/navBar.astro";
+import NavBar from "../../components/navBarEs.astro";
 import About from "./about.astro";
-// import Projects from "../projects.astro";
-import Contact from "../contact.astro";
+import Projects from "./projects.astro";
+import Contact from "./contact.astro";
 import projects from "../../data/projects.json";
 
 import "../../styles/home.css"
@@ -23,9 +23,9 @@ import github from "../../assets/icons/github.png";
 import wordpress from "../../assets/icons/wordpress.png";
 import figma from "../../assets/icons/figma.png";
 import ts from "../../assets/icons/ts.png";
-import ProjectsEs from "./projectsEs.astro";
----
 
+import cv from "../izhanlaragarcia.pdf";
+---
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -39,7 +39,7 @@ import ProjectsEs from "./projectsEs.astro";
         <span class="typing">|</span>
       </h1>
       <p class="desc">Transformo ideas en experiencias digitales únicas.</p>
-      <a href="/cv.pdf" class="btn">Descargar CV</a>
+      <a href={cv} class="btn" download="CVIzhanLaraGarcia">Descargar CV</a>
 
       <div class="socials">
         <a href="https://www.linkedin.com/in/izhan-lara-garc%C3%ADa/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -70,6 +70,6 @@ import ProjectsEs from "./projectsEs.astro";
   </section>
 
   <About />
-  <ProjectsEs projects={projects.slice(0, 3)} />
+  <Projects projects={projects.slice(0, 3)} />
   <Contact />
 </BaseLayout>

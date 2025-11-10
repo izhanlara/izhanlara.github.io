@@ -1,0 +1,26 @@
+[
+  {
+    "title": "NAW - Noticias del Mundo",
+    "description": "Una aplicación web moderna y de alto rendimiento para mantenerse al día con las últimas noticias globales, desarrollada con Angular 20 y renderizado del lado del servidor (SSR). Ofrece una experiencia de usuario fluida con soporte para múltiples idiomas y modo oscuro.",
+    "image": "nawlogo",
+    "link": "https://github.com/NAW-News-Around-the-World/NAW",
+    "status": "En progreso",
+    "techStack": "Angular"
+  },
+  {
+    "title": "Icon Bot",
+    "description": "Un bot de Discord completamente personalizado desarrollado para Sica Games, diseñado para automatizar y gestionar servidores de forma sencilla. Integra herramientas avanzadas de moderación, un chatbot interactivo, generación de memes y gestión dinámica de roles, ofreciendo una experiencia fluida e inteligente para la comunidad.",
+    "image": "icon",
+    "link": "https://discord.com/oauth2/authorize?client_id=773838863050211338",
+    "status": "Cerrado",
+    "techStack": "Discord.js"
+  },
+  {
+    "title": "ISB Instalaciones",
+    "description": "Un sitio web profesional en WordPress creado para IBS Instalaciones, que muestra su experiencia en protección contra incendios, sistemas eléctricos, cámaras de seguridad y servicios de mantenimiento. Cuenta con un diseño moderno, disposición adaptable y SEO optimizado para resaltar la fiabilidad y excelencia técnica de la empresa.",
+    "image": "isb",
+    "link": "https://isbinstalaciones.com",
+    "status": "Finalizado",
+    "techStack": "Wordpress"
+  }
+]
